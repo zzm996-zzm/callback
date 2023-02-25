@@ -9,7 +9,8 @@ import (
 
 func index(w http.ResponseWriter, r *http.Request) {
 	// 往w里写入内容，就会在浏览器里输出
-	fmt.Println(ioutil.ReadAll(r.Body))
+	bytes, _ := ioutil.ReadAll(r.Body)
+	fmt.Println(string(bytes))
 }
 
 func main() {
